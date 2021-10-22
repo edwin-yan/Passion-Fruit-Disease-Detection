@@ -2,4 +2,4 @@
 .DS_Store
 Sample_submission.csv
 **/*.jpg
-
+**/*.pyc

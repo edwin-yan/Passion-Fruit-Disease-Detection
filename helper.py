@@ -5,7 +5,7 @@ from matplotlib.patches import Rectangle
 import math
 
 
-def plot_sample_images(df, top_n=25, n_col=5, is_train=True):
+def plot_sample_images(df, top_n=25, n_col=5, show_label=True, is_train=True):
     top_n = top_n if top_n <= len(df) else len(df)
     n_row = math.ceil(top_n / n_col)
     fig_size = (5 * n_col, 4 * n_row)
@@ -15,9 +15,8 @@ def plot_sample_images(df, top_n=25, n_col=5, is_train=True):
         ax = axes[idx // n_col, idx % n_col]
         image = img.imread(f'{img_folder}/{row["Image_ID"]}.jpg')
         ax.imshow(image)
-        if is_train:
-            rect = Rectangle((row["xmin"], row["ymin"]), row["width"], row["height"], linewidth=1, edgecolor='r',
-                             facecolor='none')
+        if show_label:
+            rect = Rectangle((row["xmin"], row["ymin"]), row["width"], row["height"], linewidth=1, edgecolor='r', facecolor='none')
             ax.add_patch(rect)
             ax.set_title(row["class"])
     plt.tight_layout()
