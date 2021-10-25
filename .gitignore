@@ -2,4 +2,10 @@
 .DS_Store
 Sample_submission.csv
 **/*.jpg
-
+.ipynb_checkpoints/
+Checkpoints/
+Models/
+PassionfruitStarterNotebook.ipynb
+__MACOSX/
+__pycache__/
+**/*.csv
