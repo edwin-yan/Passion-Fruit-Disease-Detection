@@ -4,13 +4,13 @@ import matplotlib.image as img
 from matplotlib.patches import Rectangle
 import math
 
-def plot_sample_images(df, top_n=25, n_col=5, show_label=True, is_train=True):
+def plot_sample_images(df, top_n=25, n_col=5, show_label=True, is_train=True, dir_path='./'):
     print("Warning! Deprecated....")
     top_n = top_n if top_n <= len(df) else len(df)
     n_row = math.ceil(top_n / n_col)
     fig_size = (5 * n_col, 4 * n_row)
     fig, axes = plt.subplots(n_row, n_col, figsize=fig_size)
-    img_folder = f'./{"Train" if is_train else "Test"}_Images'
+    img_folder = f'{dir_path}{"Train" if is_train else "Test"}_Images'
     for idx, row in df.iloc[:top_n, :].iterrows():
         ax = axes[idx // n_col, idx % n_col]
         image = img.imread(f'{img_folder}/{row["Image_ID"]}.jpg')
