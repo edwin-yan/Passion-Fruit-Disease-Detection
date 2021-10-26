@@ -22,12 +22,12 @@ def plot_sample_images(df, top_n=25, n_col=5, show_label=True, is_train=True, di
     plt.tight_layout()
     plt.show()
 
-def plot_sample_images_multi(df, top_n=25, n_col=5, show_label=True, is_train=True):
+def plot_sample_images_multi(df, top_n=25, n_col=5, show_label=True, is_train=True, dir_path='./'):
     top_n = top_n if top_n <= df.Image_ID.nunique() else df.Image_ID.nunique()
     n_row = math.ceil(top_n / n_col)
     fig_size = (8 * n_col, 7 * n_row)
     fig, axes = plt.subplots(n_row, n_col, figsize=fig_size)
-    img_folder = f'./{"Train" if is_train else "Test"}_Images'
+    img_folder = f'{dir_path}{"Train" if is_train else "Test"}_Images'
     img_ids = df.Image_ID.value_counts().index
     colors = ['b', 'g', 'r', 'm', 'c', '']
     for idx, img_id in enumerate(img_ids[:top_n]):
