@@ -1,0 +1,7 @@
+path: ../datasets/
+train: Train/images
+val: Train/images
+# TODO: create train val split
+
+nc: 3
+names: ['fruit_healthy', 'fruit_woodiness', 'fruit_brownspot']
