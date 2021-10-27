@@ -8,3 +8,4 @@ PassionfruitStarterNotebook.ipynb
 __MACOSX/
 __pycache__/
 **/*.csv
+yolo5Input/*.txt
