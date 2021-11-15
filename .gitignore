@@ -11,3 +11,7 @@ __pycache__/
 **/*.txt
 **/*.pt
 **/runs/**
+**/*.record
+**/*.config
+Experiments/TF_Detection/training/
+Experiments/TF_Detection/eff*/*
