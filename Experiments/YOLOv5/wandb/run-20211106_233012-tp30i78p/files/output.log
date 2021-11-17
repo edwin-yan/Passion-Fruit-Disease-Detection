@@ -1,0 +1,79 @@
+                 from  n    params  module                                  arguments
+  0                -1  1      8800  models.common.Conv                      [3, 80, 6, 2, 2]
+  1                -1  1    115520  models.common.Conv                      [80, 160, 3, 2]
+  2                -1  4    309120  models.common.C3                        [160, 160, 4]
+  3                -1  1    461440  models.common.Conv                      [160, 320, 3, 2]
+  4                -1  8   2259200  models.common.C3                        [320, 320, 8]
+  5                -1  1   1844480  models.common.Conv                      [320, 640, 3, 2]
+  6                -1 12  13125120  models.common.C3                        [640, 640, 12]
+  7                -1  1   7375360  models.common.Conv                      [640, 1280, 3, 2]
+  8                -1  4  19676160  models.common.C3                        [1280, 1280, 4]
+  9                -1  1   4099840  models.common.SPPF                      [1280, 1280, 5]
+ 10                -1  1    820480  models.common.Conv                      [1280, 640, 1, 1]
+ 11                -1  1         0  torch.nn.modules.upsampling.Upsample    [None, 2, 'nearest']
+ 12           [-1, 6]  1         0  models.common.Concat                    [1]
+ 13                -1  4   5332480  models.common.C3                        [1280, 640, 4, False]
+ 14                -1  1    205440  models.common.Conv                      [640, 320, 1, 1]
+ 15                -1  1         0  torch.nn.modules.upsampling.Upsample    [None, 2, 'nearest']
+ 16           [-1, 4]  1         0  models.common.Concat                    [1]
+ 17                -1  4   1335040  models.common.C3                        [640, 320, 4, False]
+ 18                -1  1    922240  models.common.Conv                      [320, 320, 3, 2]
+ 19          [-1, 14]  1         0  models.common.Concat                    [1]
+ 20                -1  4   4922880  models.common.C3                        [640, 640, 4, False]
+ 21                -1  1   3687680  models.common.Conv                      [640, 640, 3, 2]
+ 22          [-1, 10]  1         0  models.common.Concat                    [1]
+ 23                -1  4  19676160  models.common.C3                        [1280, 1280, 4, False]
+ 24      [17, 20, 23]  1     53832  models.yolo.Detect                      [3, [[10, 13, 16, 30, 33, 23], [30, 61, 62, 45, 59, 119], [116, 90, 156, 198, 373, 326]], [320, 640, 1280]]
+/home/bdina/miniconda3/lib/python3.9/site-packages/torch/functional.py:445: UserWarning: torch.meshgrid: in an upcoming release, it will be required to pass the indexing argument. (Triggered internally at  /opt/conda/conda-bld/pytorch_1634272204863/work/aten/src/ATen/native/TensorShape.cpp:2157.)
+  return _VF.meshgrid(tensors, **kwargs)  # type: ignore[attr-defined]
+Model Summary: 567 layers, 86231272 parameters, 86231272 gradients, 204.2 GFLOPs
+Scaled weight_decay = 0.0005
+[34m[1moptimizer:[39m[22m SGD with parameter groups 123 weight, 126 weight (no decay), 126 bias
+[34m[1mtrain: [39m[22mScanning '../datasets/Train/labels.cache' images and labels... 3001 found[34m[1mtrain: [39m[22mWARNING: ../datasets/Train/images/ID_Y1XECFL7.jpg: 1 duplicate labels removed
+[34m[1mtrain: [39m[22mScanning '../datasets/Train/labels.cache' images and labels... 3001 found
+[34m[1mval: [39m[22mScanning '../datasets/Train/labels.cache' images and labels... 3001 found, [34m[1mtrain: [39m[22mWARNING: ../datasets/Train/images/ID_Y1XECFL7.jpg: 1 duplicate labels removed
+[34m[1mval: [39m[22mScanning '../datasets/Train/labels.cache' images and labels... 3001 found,
+Plotting labels...
+[34m[1mautoanchor: [39m[22mAnalyzing anchors... anchors/target = 3.93, Best Possible Recall (BPR) = 0.9997
+Image sizes 512 train, 512 val
+Using 8 dataloader workers
+Logging results to [1mruns/train/exp14
+Starting training for 100 epochs...
+     Epoch   gpu_mem       box       obj       cls    labels  img_size
+  0%|                                                    | 0/94 [00:01<?, ?it/s]
+Traceback (most recent call last):
+  File "/home/bdina/Desktop/jhu_dnn/Passion-Fruit-Disease-Detection/Experiments/YOLOv5/train.py", line 627, in <module>
+    main(opt)
+  File "/home/bdina/Desktop/jhu_dnn/Passion-Fruit-Disease-Detection/Experiments/YOLOv5/train.py", line 524, in main
+    train(opt.hyp, opt, device, callbacks)
+  File "/home/bdina/Desktop/jhu_dnn/Passion-Fruit-Disease-Detection/Experiments/YOLOv5/train.py", line 320, in train
+    pred = model(imgs)  # forward
+  File "/home/bdina/miniconda3/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1102, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/home/bdina/Desktop/jhu_dnn/Passion-Fruit-Disease-Detection/Experiments/YOLOv5/models/yolo.py", line 126, in forward
+    return self._forward_once(x, profile, visualize)  # single-scale inference, train
+  File "/home/bdina/Desktop/jhu_dnn/Passion-Fruit-Disease-Detection/Experiments/YOLOv5/models/yolo.py", line 149, in _forward_once
+    x = m(x)  # run
+  File "/home/bdina/miniconda3/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1102, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/home/bdina/Desktop/jhu_dnn/Passion-Fruit-Disease-Detection/Experiments/YOLOv5/models/common.py", line 137, in forward
+    return self.cv3(torch.cat((self.m(self.cv1(x)), self.cv2(x)), dim=1))
+  File "/home/bdina/miniconda3/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1102, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/home/bdina/miniconda3/lib/python3.9/site-packages/torch/nn/modules/container.py", line 141, in forward
+    input = module(input)
+  File "/home/bdina/miniconda3/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1102, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/home/bdina/Desktop/jhu_dnn/Passion-Fruit-Disease-Detection/Experiments/YOLOv5/models/common.py", line 103, in forward
+    return x + self.cv2(self.cv1(x)) if self.add else self.cv2(self.cv1(x))
+  File "/home/bdina/miniconda3/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1102, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/home/bdina/Desktop/jhu_dnn/Passion-Fruit-Disease-Detection/Experiments/YOLOv5/models/common.py", line 45, in forward
+    return self.act(self.bn(self.conv(x)))
+  File "/home/bdina/miniconda3/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1102, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/home/bdina/miniconda3/lib/python3.9/site-packages/torch/nn/modules/batchnorm.py", line 168, in forward
+    return F.batch_norm(
+  File "/home/bdina/miniconda3/lib/python3.9/site-packages/torch/nn/functional.py", line 2282, in batch_norm
+    return torch.batch_norm(
+RuntimeError: CUDA out of memory. Tried to allocate 80.00 MiB (GPU 0; 5.81 GiB total capacity; 2.98 GiB already allocated; 24.25 MiB free; 3.11 GiB reserved in total by PyTorch) If reserved memory is >> allocated memory try setting max_split_size_mb to avoid fragmentation.  See documentation for Memory Management and PYTORCH_CUDA_ALLOC_CONF

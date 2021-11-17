@@ -1,0 +1,37 @@
+{
+    "os": "Linux-5.11.0-38-generic-x86_64-with-glibc2.31",
+    "python": "3.9.5",
+    "heartbeatAt": "2021-11-07T04:28:49.426379",
+    "startedAt": "2021-11-07T04:28:47.453653",
+    "docker": null,
+    "gpu": "GeForce RTX 3060 Laptop GPU",
+    "gpu_count": 1,
+    "cpu_count": 16,
+    "cuda": null,
+    "args": [
+        "--img",
+        "512",
+        "--batch",
+        "32",
+        "--epochs",
+        "100",
+        "--data",
+        "passion_fruit.yaml",
+        "--weights",
+        "",
+        "--cfg",
+        "passion_yolov5s.yaml"
+    ],
+    "state": "running",
+    "program": "/home/bdina/Desktop/jhu_dnn/Passion-Fruit-Disease-Detection/Experiments/YOLOv5/train.py",
+    "codePath": "Experiments/YOLOv5/train.py",
+    "git": {
+        "remote": "https://github.com/edwin-yan/Passion-Fruit-Disease-Detection.git",
+        "commit": "68940cc3f5e842fe891596265b71c9f4b4ced656"
+    },
+    "email": null,
+    "root": "/home/bdina/Desktop/jhu_dnn/Passion-Fruit-Disease-Detection",
+    "host": "bdina",
+    "username": "bdina",
+    "executable": "/home/bdina/miniconda3/bin/python3"
+}
