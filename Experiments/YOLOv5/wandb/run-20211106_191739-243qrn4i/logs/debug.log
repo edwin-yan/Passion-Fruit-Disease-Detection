@@ -1,0 +1,26 @@
+2021-11-06 19:17:39,570 INFO    MainThread:2829 [wandb_setup.py:_flush():71] setting env: {}
+2021-11-06 19:17:39,570 INFO    MainThread:2829 [wandb_setup.py:_flush():71] setting login settings: {'login_timeout': 30}
+2021-11-06 19:17:39,570 INFO    MainThread:2829 [wandb_setup.py:_flush():71] setting login settings: {}
+2021-11-06 19:17:39,570 INFO    MainThread:2829 [wandb_init.py:_log_setup():357] Logging user logs to /home/bdina/Desktop/jhu_dnn/Passion-Fruit-Disease-Detection/Experiments/YOLOv5/wandb/run-20211106_191739-243qrn4i/logs/debug.log
+2021-11-06 19:17:39,571 INFO    MainThread:2829 [wandb_init.py:_log_setup():358] Logging internal logs to /home/bdina/Desktop/jhu_dnn/Passion-Fruit-Disease-Detection/Experiments/YOLOv5/wandb/run-20211106_191739-243qrn4i/logs/debug-internal.log
+2021-11-06 19:17:39,571 INFO    MainThread:2829 [wandb_init.py:init():390] calling init triggers
+2021-11-06 19:17:39,571 INFO    MainThread:2829 [wandb_init.py:init():395] wandb.init called with sweep_config: {}
+config: {'weights': 'yolov5s.pt', 'cfg': '', 'data': '/home/bdina/Desktop/jhu_dnn/Passion-Fruit-Disease-Detection/Experiments/YOLOv5/data/passion_fruit.yaml', 'hyp': {'lr0': 0.01, 'lrf': 0.1, 'momentum': 0.937, 'weight_decay': 0.0005, 'warmup_epochs': 3.0, 'warmup_momentum': 0.8, 'warmup_bias_lr': 0.1, 'box': 0.05, 'cls': 0.5, 'cls_pw': 1.0, 'obj': 1.0, 'obj_pw': 1.0, 'iou_t': 0.2, 'anchor_t': 4.0, 'fl_gamma': 0.0, 'hsv_h': 0.015, 'hsv_s': 0.7, 'hsv_v': 0.4, 'degrees': 0.0, 'translate': 0.1, 'scale': 0.5, 'shear': 0.0, 'perspective': 0.0, 'flipud': 0.0, 'fliplr': 0.5, 'mosaic': 1.0, 'mixup': 0.0, 'copy_paste': 0.0}, 'epochs': 4000, 'batch_size': 32, 'imgsz': 512, 'rect': False, 'resume': False, 'nosave': False, 'noval': False, 'noautoanchor': False, 'evolve': None, 'bucket': '', 'cache': 'ram', 'image_weights': False, 'device': '', 'multi_scale': False, 'single_cls': False, 'adam': False, 'sync_bn': False, 'workers': 8, 'project': 'runs/train', 'name': 'exp', 'exist_ok': False, 'quad': False, 'linear_lr': False, 'label_smoothing': 0.0, 'patience': 100, 'freeze': 0, 'save_period': -1, 'local_rank': -1, 'entity': None, 'upload_dataset': False, 'bbox_interval': -1, 'artifact_alias': 'latest', 'save_dir': 'runs/train/exp8'}
+2021-11-06 19:17:39,571 INFO    MainThread:2829 [wandb_init.py:init():435] starting backend
+2021-11-06 19:17:39,571 INFO    MainThread:2829 [backend.py:_multiprocessing_setup():95] multiprocessing start_methods=fork,spawn,forkserver, using: spawn
+2021-11-06 19:17:39,583 INFO    MainThread:2829 [backend.py:ensure_launched():199] starting backend process...
+2021-11-06 19:17:39,589 INFO    MainThread:2829 [backend.py:ensure_launched():204] started backend process with pid: 2894
+2021-11-06 19:17:39,591 INFO    MainThread:2829 [wandb_init.py:init():444] backend started and connected
+2021-11-06 19:17:39,592 INFO    MainThread:2829 [wandb_init.py:init():503] updated telemetry
+2021-11-06 19:17:39,605 INFO    MainThread:2829 [wandb_init.py:init():533] communicating current version
+2021-11-06 19:17:40,330 INFO    MainThread:2829 [wandb_init.py:init():538] got version response 
+2021-11-06 19:17:40,330 INFO    MainThread:2829 [wandb_init.py:init():548] communicating run to backend with 30 second timeout
+2021-11-06 19:17:40,665 INFO    MainThread:2829 [wandb_init.py:init():576] starting run threads in backend
+2021-11-06 19:17:45,669 INFO    MainThread:2829 [wandb_run.py:_console_start():1693] atexit reg
+2021-11-06 19:17:45,670 INFO    MainThread:2829 [wandb_run.py:_redirect():1567] redirect: SettingsConsole.REDIRECT
+2021-11-06 19:17:45,671 INFO    MainThread:2829 [wandb_run.py:_redirect():1572] Redirecting console.
+2021-11-06 19:17:45,673 INFO    MainThread:2829 [wandb_run.py:_redirect():1628] Redirects installed.
+2021-11-06 19:17:45,673 INFO    MainThread:2829 [wandb_init.py:init():603] run started, returning control to user process
+2021-11-06 19:17:45,676 INFO    MainThread:2829 [wandb_run.py:_config_callback():911] config_cb None None {'data_dict': {'path': '../datasets/', 'train': '../datasets/Train/images', 'val': '../datasets/Train/images', 'nc': 3, 'names': ['fruit_healthy', 'fruit_woodiness', 'fruit_brownspot']}}
+2021-11-06 19:22:25,102 INFO    MainThread:2829 [wandb_run.py:_atexit_cleanup():1663] got exitcode: 255
+2021-11-06 19:22:25,103 INFO    MainThread:2829 [wandb_run.py:_restore():1635] restore
