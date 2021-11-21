@@ -33,7 +33,7 @@ def plot_sample_images_multi(df, top_n=25, n_col=5, show_label=True, is_train=Tr
     fig, axes = plt.subplots(n_row, n_col, figsize=fig_size)
     img_folder = f'{dir_path}/{"Train" if is_train else "Test"}_Images'
     img_ids = df.Image_ID.value_counts().index
-    colors = ['b', 'g', 'r', 'm', 'c', '']
+    colors = ['b', 'g', 'r', 'm', 'c', 'y', 'k']
     for idx, img_id in enumerate(img_ids[:top_n]):
         ax = axes[idx // n_col, idx % n_col]
         image = img.imread(f'{img_folder}/{img_id}.jpg')
