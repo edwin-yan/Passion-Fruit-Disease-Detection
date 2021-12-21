@@ -1,6 +1,6 @@
 path: ../datasets/
 train: Train/images
-val: Train/images
+val: Val/images
 # TODO: create train val split
 
 nc: 3

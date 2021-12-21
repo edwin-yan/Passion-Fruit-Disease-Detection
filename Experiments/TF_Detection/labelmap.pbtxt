@@ -1,0 +1,12 @@
+item {
+    id: 1
+    name: 'fruit_healthy'
+}
+item {
+    id: 2
+    name: 'fruit_woodiness'
+}
+item {
+    id: 3
+    name: 'fruit_brownspot'
+}

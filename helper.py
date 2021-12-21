@@ -22,14 +22,18 @@ def plot_sample_images(df, top_n=25, n_col=5, show_label=True, is_train=True, di
     plt.tight_layout()
     plt.show()
 
-def plot_sample_images_multi(df, top_n=25, n_col=5, show_label=True, is_train=True, dir_path='.'):
+def plot_sample_images_multi(df, top_n=25, n_col=5, show_label=True, is_train=True, dir_path='.', convert=False):
+    if convert:
+        df = df.copy(deep=True)
+        df['width'] = df['xmax'] - df['xmin']
+        df['height'] = df['ymax'] - df['ymin']
     top_n = top_n if top_n <= df.Image_ID.nunique() else df.Image_ID.nunique()
     n_row = math.ceil(top_n / n_col)
     fig_size = (8 * n_col, 7 * n_row)
     fig, axes = plt.subplots(n_row, n_col, figsize=fig_size)
     img_folder = f'{dir_path}/{"Train" if is_train else "Test"}_Images'
     img_ids = df.Image_ID.value_counts().index
-    colors = ['b', 'g', 'r', 'm', 'c', '']
+    colors = ['b', 'g', 'r', 'm', 'c', 'y', 'k']
     for idx, img_id in enumerate(img_ids[:top_n]):
         ax = axes[idx // n_col, idx % n_col]
         image = img.imread(f'{img_folder}/{img_id}.jpg')
@@ -44,3 +48,20 @@ def plot_sample_images_multi(df, top_n=25, n_col=5, show_label=True, is_train=Tr
                 ax.text(x + w / 3, y, row["class"], color=color, fontsize=18, weight='bold')
     plt.tight_layout()
     plt.show()
+
+    
+def rgb_splitter(image_id, is_train=True, dir_path='.'):
+    img_folder = f'{dir_path}/{"Train" if is_train else "Test"}_Images'
+    image = img.imread(f'{img_folder}/{image_id}.jpg')
+    rgb_list = ['Reds','Greens','Blues']
+    fig, ax = plt.subplots(1, 4, figsize=(25,10), sharey = True)
+    for i in range(4):
+        if i > 0:
+            ax[i].imshow(image[:,:,i - 1], cmap = rgb_list[i - 1])
+            ax[i].set_title(rgb_list[i - 1], fontsize = 22)
+        else:
+            ax[i].imshow(image)
+            ax[i].set_title("Original", fontsize = 22)
+        ax[i].axis('off')
+        
+    fig.tight_layout()
